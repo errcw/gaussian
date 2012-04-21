@@ -1,0 +1,28 @@
+{
+  "name": "gaussian",
+  "description": "A JavaScript model of a Gaussian distribution",
+  "version": "0.1.0",
+  "author": "Eric Woroshow <eric@ericw.ca>",
+  "homepage": "https://github.com/errcw/gaussian",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/errcw/gaussian.git"
+  },
+  "licenses": {
+    "type": "MIT",
+    "url": "http://github.com/errcw/gaussian/blob/master/LICENSE"
+  },
+  "main": "lib/gaussian",
+  "scripts": {
+    "test": "nodeunit test"
+  },
+  "engines": {
+    "node": ">= 0.6.0"
+  },
+  "keywords": [ "gaussian", "normal", "distribution" ],
+  "dependencies": {
+  },
+  "devDependencies": {
+    "nodeunit": "0.7.x"
+  }
+}
