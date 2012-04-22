@@ -13,6 +13,7 @@ A JavaScript model of the [Normal](http://en.wikipedia.org/wiki/Normal_distribut
 ### Properties
 - `mean`: the mean (μ) of the distribution
 - `variance`: the variance (σ^2) of the distribution
+- `standardDeviation`: the standard deviation (σ) of the distribution
 
 ### Probability Functions
 - `pdf(x)`: the probability density function, which describes the probability
