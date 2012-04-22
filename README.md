@@ -6,9 +6,10 @@ A JavaScript model of the [Normal](http://en.wikipedia.org/wiki/Normal_distribut
 ## API
 
 ### Creating a Distribution
-
-    var gaussian = require('gaussian');
-    var distribution = gaussian(mean, variance);
+```javascript
+var gaussian = require('gaussian');
+var distribution = gaussian(mean, variance);
+```
 
 ### Properties
 - `mean`: the mean (μ) of the distribution
