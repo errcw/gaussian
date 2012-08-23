@@ -1,3 +1,4 @@
+[![build status](https://secure.travis-ci.org/errcw/gaussian.png)](http://travis-ci.org/errcw/gaussian)
 # gaussian
 
 A JavaScript model of the [Normal](http://en.wikipedia.org/wiki/Normal_distribution)
