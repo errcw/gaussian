@@ -24,5 +24,8 @@ var distribution = gaussian(mean, variance);
 - `ppf(x)`: the percent point function, the inverse of _cdf_
 
 ### Combination Functions
-- `mul(d)`: returns the product distribution of this and the given distribution
-- `div(d)`: returns the quotient distribution of this and the given distribution
+- `mul(d)`: returns the product distribution of this and the given distribution. If a constant is passed in the distribution is scaled.
+- `div(d)`: returns the quotient distribution of this and the given distribution. If a constant is passed in the distribution is scaled by 1/d.
+- `add(d)`: returns the result of adding this and the given distribution
+- `sub(d)`: returns the result of subtracting this and the given distribution
+- `scale(c)`: returns the result of scaling this distribution by the given constant

@@ -8,6 +8,11 @@ assert.epsilonEqual = function(actual, expected) {
   var diff = Math.abs(actual - expected);
   assert.ok(diff < 1e-5, actual + ' - ' + expected + ' is ' + diff);
 };
+assert.gaussianEqual = function(actual, expected) {
+  assert.equal(actual.mean, expected.mean);
+  assert.equal(actual.variance, expected.variance);
+  assert.epsilonEqual(actual.standardDeviation, Math.sqrt(expected.variance));
+}
 
 module.exports = {
   'test properties': function(test) {
@@ -55,24 +60,41 @@ module.exports = {
   },
 
   'test mul': function(test) {
+    //test normal mul
     var d = gaussian(0, 1).mul(gaussian(0, 1));
-    test.equal(d.mean, 0);
-    test.equal(d.variance, 0.5);
-    test.epsilonEqual(d.standardDeviation, 0.707106 /* 1/sqrt(2) */);
+    test.gaussianEqual(d, gaussian(0,0.5));
+    //test scale
+    test.gaussianEqual(gaussian(1,1).mul(2), gaussian(2,4));
     test.done();
   },
 
   'test div': function(test) {
+    //test normal div
     var d = gaussian(1, 1).div(gaussian(1, 2));
-    test.equal(d.mean, 1);
-    test.equal(d.variance, 2);
-    test.epsilonEqual(d.standardDeviation, 1.41421 /* sqrt(2) */);
+    test.gaussianEqual(d, gaussian(1,2));
+    //test scale
+    test.gaussianEqual(gaussian(1,1).div(1/2), gaussian(2,4));
     test.done();
   },
 
   'test rejects negative variances': function(test) {
     test.throws(function() { gaussian(0, 0) }, Error);
     test.throws(function() { gaussian(0, -1) }, Error);
+    test.done();
+  },
+
+  'test add': function(test) {
+    test.gaussianEqual(gaussian(1,1).add(gaussian(1,2)), gaussian(2,3));
+    test.done();
+  },
+
+  'test sub': function(test) {
+    test.gaussianEqual(gaussian(1,1).sub(gaussian(1,2)), gaussian(0,3));
+    test.done();
+  },
+
+  'test scale': function(test) {
+    test.gaussianEqual(gaussian(1,1).scale(2), gaussian(2,4));
     test.done();
   }
 };
