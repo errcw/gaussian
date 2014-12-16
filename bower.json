@@ -6,19 +6,16 @@
     "Eric Woroshow <eric@ericw.ca>"
   ],
   "description": "A JavaScript model of a Gaussian distribution",
-  "main": "lib/gaussian",
+  "main": "lib/gaussian.js",
   "keywords": [
-    "\"gaussian\"",
-    "\"normal\"",
-    "\"distribution\""
+    "gaussian",
+    "normal",
+    "distribution"
   ],
   "license": "MIT",
-  "private": true,
   "ignore": [
     "**/.*",
     "node_modules",
-    "bower_components",
-    "test",
-    "tests"
+    "bower_components"
   ]
 }
