@@ -14,7 +14,7 @@
   ],
   "license": "MIT",
   "ignore": [
-    "node_modules",
-    "bower_components"
+    "**/*",
+    "!lib/gaussian.js"
   ]
 }
