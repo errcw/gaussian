@@ -9,6 +9,8 @@ A JavaScript model of the [Normal](http://en.wikipedia.org/wiki/Normal_distribut
 ```javascript
 var gaussian = require('gaussian');
 var distribution = gaussian(mean, variance);
+// Take a random sample using inverse transform sampling method.
+var sample = distribution.ppf(Math.random());
 ```
 
 ### Properties
