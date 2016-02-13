@@ -1,8 +1,8 @@
-// Tests based on values from Wolfram Alpha
+// Tests based on values from Wolfram Alpha.
 
 var gaussian = require('../lib/gaussian');
 
-// Allow for some error
+// Allow for some error.
 var assert = require('nodeunit').assert;
 assert.epsilonEqual = function(actual, expected) {
   var diff = Math.abs(actual - expected);
@@ -60,41 +60,41 @@ module.exports = {
   },
 
   'test mul': function(test) {
-    //test normal mul
+    // Test normal mul.
     var d = gaussian(0, 1).mul(gaussian(0, 1));
-    test.gaussianEqual(d, gaussian(0,0.5));
-    //test scale
-    test.gaussianEqual(gaussian(1,1).mul(2), gaussian(2,4));
+    test.gaussianEqual(d, gaussian(0, 0.5));
+    // Test scale.
+    test.gaussianEqual(gaussian(1, 1).mul(2), gaussian(2, 4));
     test.done();
   },
 
   'test div': function(test) {
-    //test normal div
+    // Test normal div.
     var d = gaussian(1, 1).div(gaussian(1, 2));
-    test.gaussianEqual(d, gaussian(1,2));
-    //test scale
-    test.gaussianEqual(gaussian(1,1).div(1/2), gaussian(2,4));
+    test.gaussianEqual(d, gaussian(1, 2));
+    // Test scale.
+    test.gaussianEqual(gaussian(1, 1).div(1 / 2), gaussian(2, 4));
     test.done();
   },
 
-  'test rejects negative variances': function(test) {
+  'test rejects non-positive variances': function(test) {
     test.throws(function() { gaussian(0, 0) }, Error);
     test.throws(function() { gaussian(0, -1) }, Error);
     test.done();
   },
 
   'test add': function(test) {
-    test.gaussianEqual(gaussian(1,1).add(gaussian(1,2)), gaussian(2,3));
+    test.gaussianEqual(gaussian(1, 1).add(gaussian(1, 2)), gaussian(2, 3));
     test.done();
   },
 
   'test sub': function(test) {
-    test.gaussianEqual(gaussian(1,1).sub(gaussian(1,2)), gaussian(0,3));
+    test.gaussianEqual(gaussian(1, 1).sub(gaussian(1, 2)), gaussian(0, 3));
     test.done();
   },
 
   'test scale': function(test) {
-    test.gaussianEqual(gaussian(1,1).scale(2), gaussian(2,4));
+    test.gaussianEqual(gaussian(1, 1).scale(2), gaussian(2, 4));
     test.done();
   }
 };
