@@ -31,3 +31,6 @@ var sample = distribution.ppf(Math.random());
 - `add(d)`: returns the result of adding this and the given distribution's means and variances
 - `sub(d)`: returns the result of subtracting this and the given distribution's means and variances
 - `scale(c)`: returns the result of scaling this distribution by the given constant
+
+### Generation Function
+- `random(n)`: returns an array of generated `n` random samples correspoding to the Gaussian parameters.

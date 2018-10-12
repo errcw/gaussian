@@ -19,9 +19,12 @@
   "engines": {
     "node": ">= 0.6.0"
   },
-  "keywords": [ "gaussian", "normal", "distribution" ],
-  "dependencies": {
-  },
+  "keywords": [
+    "gaussian",
+    "normal",
+    "distribution"
+  ],
+  "dependencies": {},
   "devDependencies": {
     "nodeunit": ">= 0.7.x"
   }
