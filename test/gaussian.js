@@ -13,6 +13,9 @@ assert.gaussianEqual = function(actual, expected) {
   assert.equal(actual.variance, expected.variance);
   assert.epsilonEqual(actual.standardDeviation, Math.sqrt(expected.variance));
 }
+assert.isArrayType = function(actual, expected){
+  actual.forEach((n) => { assert.equal(typeof n, expected) })
+}
 
 module.exports = {
   'test properties': function(test) {
@@ -95,6 +98,13 @@ module.exports = {
 
   'test scale': function(test) {
     test.gaussianEqual(gaussian(1, 1).scale(2), gaussian(2, 4));
+    test.done();
+  },
+
+  'test generate samples': function(test){
+    let outcomes = gaussian(0,0.3).random(10);
+    test.isArrayType(outcomes,'number')
+    test.epsilonEqual(outcomes.length,10);
     test.done();
   }
 };
