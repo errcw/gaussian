@@ -8,6 +8,10 @@ assert.epsilonEqual = function(actual, expected) {
   var diff = Math.abs(actual - expected);
   assert.ok(diff < 1e-5, actual + ' - ' + expected + ' is ' + diff);
 };
+assert.looselyEqual = function(actual, expected) {
+  var diff = Math.abs(actual - expected);
+  assert.ok(diff < 1e-3, actual + ' - ' + expected + ' is ' + diff);
+};
 assert.gaussianEqual = function(actual, expected) {
   assert.equal(actual.mean, expected.mean);
   assert.equal(actual.variance, expected.variance);
@@ -105,6 +109,25 @@ module.exports = {
     let outcomes = gaussian(0,0.3).random(10);
     test.isArrayType(outcomes,'number')
     test.epsilonEqual(outcomes.length,10);
+    test.done();
+  },
+
+  /**
+   * Just a naive and simple 
+   */
+  'test generated sample distribution': function(test){
+    const size = 3e6;
+    let outcomes = gaussian(-1,0.65).random(size);
+    let mean = 0;
+    let variance = 0;
+    outcomes.forEach((n) => mean += n)
+    mean /= size*1.0;
+
+    outcomes.forEach((n) => variance += Math.pow(n - mean,2))
+    variance /= size*1.0;
+
+    test.looselyEqual(mean,-1.0)
+    test.looselyEqual(variance, 0.65)
     test.done();
   }
 };
