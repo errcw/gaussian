@@ -14,7 +14,7 @@
   },
   "main": "lib/gaussian",
   "scripts": {
-    "test": "nodeunit test"
+    "test": "jest"
   },
   "engines": {
     "node": ">= 0.6.0"
@@ -24,8 +24,7 @@
     "normal",
     "distribution"
   ],
-  "dependencies": {},
   "devDependencies": {
-    "nodeunit": ">= 0.7.x"
+    "jest": "26.6.3"
   }
 }
