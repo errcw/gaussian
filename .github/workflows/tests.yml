@@ -11,14 +11,12 @@ jobs:
     strategy:
       matrix:
         node-version:
-          - 8.x # deprecated
-          - 9.x # deprecated
-          # - 10.x # maintainence ends 2021-04-30
-          # - 11.x # deprecated
-          # - 12.x # maintainence ends 2022-04-30
-          # - 13.x # deprecated
-          # - 14.x # maintainence ends 2023-04-30
-          # - 15.x
+          - 10.x # maintainence ends 2021-04-30
+          - 11.x # deprecated
+          - 12.x # maintainence ends 2022-04-30
+          - 13.x # deprecated
+          - 14.x # maintainence ends 2023-04-30
+          - 15.x
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2
