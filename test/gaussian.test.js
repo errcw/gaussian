@@ -84,10 +84,12 @@ it('test add', () => {
 });
 
 it('test sub', () => {
+  expect.assertions(4);
   expect(gaussian(1, 1).sub(gaussian(1, 2))).toEqualGaussian(gaussian(0, 3));
 });
 
 it('test scale', () => {
+  expect.assertions(4);
   expect(gaussian(1, 1).scale(2)).toEqualGaussian(gaussian(2, 4));
 });
 
@@ -101,6 +103,7 @@ it('test generate samples', () => {
  * Just a naive and simple
  */
 it('test generated sample distribution', () => {
+  expect.assertions(2);
   const size = 3e6;
   const outcomes = gaussian(-1, 0.65).random(size);
   const mean = (outcomes.reduce((a, m) => a + m, 0) / size) * 1.0;
