@@ -11,6 +11,19 @@ jobs:
     strategy:
       matrix:
         node-version:
+          - 0.6.x
+          - 0.7.x
+          - 0.8.x
+          - 0.9.x
+          - 0.10.x
+          - 0.11.x
+          - 0.12.x
+          - 4.x
+          - 5.x
+          - 6.x
+          - 7.x
+          - 8.x
+          - 9.x
           - 10.x # maintainence ends 2021-04-30
           - 11.x # deprecated
           - 12.x # maintainence ends 2022-04-30
