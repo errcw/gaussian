@@ -8,10 +8,7 @@
     "type": "git",
     "url": "git://github.com/errcw/gaussian.git"
   },
-  "licenses": {
-    "type": "MIT",
-    "url": "http://github.com/errcw/gaussian/blob/master/LICENSE"
-  },
+  "license": "MIT",
   "main": "lib/gaussian",
   "scripts": {
     "test": "jest",

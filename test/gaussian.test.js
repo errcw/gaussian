@@ -112,3 +112,26 @@ it('test generated sample distribution', () => {
   expect(mean).toBeCloseTo(-1.0);
   expect(variance).toBeCloseTo(0.65);
 });
+
+/**
+ * Coverage for gaussian.js:20
+ */
+it('ceils ppf >= 1', () => {
+  expect.assertions(3);
+  const normal = gaussian(0, 1);
+  expect(normal.ppf(1)).toBe(141.4213562373095);
+  expect(normal.ppf(1.1)).toBe(141.4213562373095);
+  expect(normal.ppf(100)).toBe(141.4213562373095);
+});
+
+/**
+ * Coverage for gaussian.js:21
+ */
+it('ceils ppf <= 0', () => {
+  expect.assertions(4);
+  const normal = gaussian(0, 1);
+  expect(normal.ppf(0)).toBe(-141.4213562373095);
+  expect(normal.ppf(-0)).toBe(-141.4213562373095);
+  expect(normal.ppf(-0.1)).toBe(-141.4213562373095);
+  expect(normal.ppf(-1)).toBe(-141.4213562373095);
+});
