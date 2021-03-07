@@ -2,7 +2,6 @@
 [![Tests](https://github.com/errcw/gaussian/workflows/tests/badge.svg)](https://github.com/errcw/gaussian/actions/workflows/tests.yml)
 [![Coverage Status](https://coveralls.io/repos/github/errcw/gaussian/badge.svg?branch=master)](https://coveralls.io/github/errcw/gaussian?branch=master)
 [![Downloads](https://img.shields.io/npm/dy/gaussian)](https://www.npmjs.com/package/gaussian)
-[![License](https://img.shields.io/npm/l/gaussian)](https://github.com/errcw/gaussian/blob/master/LICENSE)
 
 # gaussian
 
