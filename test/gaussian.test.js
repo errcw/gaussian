@@ -99,6 +99,12 @@ it('test generate samples', () => {
   outcomes.forEach((outcome) => expect(typeof outcome).toBe('number'));
 });
 
+it('test custom RNG', () => {
+  var sillyFn = () => .5;
+  const outcomes = gaussian(0, 0.3).random(2, sillyFn);
+  outcomes.forEach((outcome) => expect(outcome).toBeCloseTo(-0.644894028, 8));
+});
+
 /**
  * Just a naive and simple
  */
